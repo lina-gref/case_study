@@ -161,37 +161,3 @@ test.describe('AI Chat Feature - Premium User Latency', () => {
     }
   });
 });
-
-/**
- * ============================================================================
- * DOCUMENTATION: Enterprise Testing Principles
- * ============================================================================
- * 
- * Why This Test Demonstrates Senior-Level QA:
- * 
- * ✅ **Factories** - Don't hardcode test data
- *    Used by: UserFactory.create('premium')
- *    Benefit: Adding new user types = 3 lines in factory, not 10 tests modified
- * 
- * ✅ **Page Object Model** - Don't scatter selectors everywhere
- *    Used by: ChatPage.sendMessage() instead of page.click(), page.fill()
- *    Benefit: If UI button changes, we update ONE file, not 30 tests
- * 
- * ✅ **Network Interception** - Don't rely on timing and UI rendering
- *    Used by: ApiHub to measure true API response time
- *    Benefit: Latency assertion is stable, measures backend not frontend
- * 
- * ✅ **Separation of Concerns** - Each component has ONE responsibility
- *    ChatPage = UI interactions only
- *    ApiHub = Network evaluation only
- *    UserFactory = Test data only
- * 
- * What This Demonstrates to the Interviewer:
- * ✅ I build frameworks, not individual tests
- * ✅ I understand SOLID principles
- * ✅ I think about maintainability and scalability from the start
- * ✅ I know the difference between testing UI, API, and business logic
- * ✅ I write code for junior engineers to understand and extend
- * 
- * ============================================================================
- */
